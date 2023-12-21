@@ -1,0 +1,62 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <string>
+#include <iostream>
+
+class jeux {
+private:
+    std::string nom;
+    int prix{ 0 };
+    int annee{ 2023 };
+    std::string genre;
+public:
+    // Constructeur
+    jeux(std::string nomJeu, int prixJeu, int anneeSortie, std::string genreJeu) {
+        nom = nomJeu;
+        prix = prixJeu;
+        annee = anneeSortie;
+        genre = genreJeu;
+    } 
+
+    // Méthode pour afficher les détails du jeu
+    void afficherDetails() {
+        std::cout << "Nom du jeu : " << nom << std::endl;
+        std::cout << "Prix : " << prix << " euros" << std::endl;
+        std::cout << "Année de sortie : " << annee << std::endl;
+        std::cout << "Genre : " << genre << std::endl;
+    }
+};
+class console {
+private:
+    std::string nom;
+    int prix;
+    int annee;
+public:
+    console(std::string nomConsole, int prixConsole, int anneeSortie) {
+        nom = nomConsole;
+        prix = prixConsole;
+        annee = anneeSortie;
+    }
+    void afficherDetails() {
+        std::cout << "Nom de la console : " << nom << std::endl;
+        std::cout << "Prix : " << prix << " euros" << std::endl;
+        std::cout << "Année de sortie : " << annee << std::endl;
+    }
+};
+class voiture {
+private:
+    std::string model;
+    std::string marque;
+    int portes;
+    
+};
+int main() {
+
+    jeux sekiro("sekiro", 60, 2019, "souls");
+    sekiro.afficherDetails();
+    console ps4("ps4", 399, 2014);
+    ps4.afficherDetails();
+
+
+
+    return 0;
+}
