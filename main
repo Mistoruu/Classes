@@ -1,21 +1,21 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <string>
 #include <iostream>
+#include <string>
 
-class jeux {
+class Jeu {
 private:
     std::string nom;
-    int prix{ 0 };
-    int annee{ 2023 };
+    int prix;
+    int annee;
     std::string genre;
+
 public:
     // Constructeur
-    jeux(std::string nomJeu, int prixJeu, int anneeSortie, std::string genreJeu) {
+    Jeu(std::string nomJeu, int prixJeu, int anneeSortie, std::string genreJeu) {
         nom = nomJeu;
         prix = prixJeu;
         annee = anneeSortie;
         genre = genreJeu;
-    } 
+    }
 
     // Méthode pour afficher les détails du jeu
     void afficherDetails() {
@@ -25,38 +25,61 @@ public:
         std::cout << "Genre : " << genre << std::endl;
     }
 };
-class console {
+
+class Console {
 private:
     std::string nom;
     int prix;
     int annee;
+
 public:
-    console(std::string nomConsole, int prixConsole, int anneeSortie) {
+    // Constructeur
+    Console(std::string nomConsole, int prixConsole, int anneeSortie) {
         nom = nomConsole;
         prix = prixConsole;
         annee = anneeSortie;
     }
+
+    // Méthode pour afficher les détails de la console
     void afficherDetails() {
         std::cout << "Nom de la console : " << nom << std::endl;
         std::cout << "Prix : " << prix << " euros" << std::endl;
         std::cout << "Année de sortie : " << annee << std::endl;
     }
 };
-class voiture {
-private:
-    std::string model;
-    std::string marque;
-    int portes;
-    
-};
-int main() {
 
-    jeux sekiro("sekiro", 60, 2019, "souls");
+class Voiture {
+private:
+    std::string modele;
+    std::string marque;
+    int nombrePortes;
+
+public:
+    // Constructeur
+    Voiture(std::string modeleVoiture, std::string marqueVoiture, int portesVoiture) {
+        modele = modeleVoiture;
+        marque = marqueVoiture;
+        nombrePortes = portesVoiture;
+    }
+
+    // Méthode pour afficher les détails de la voiture
+    void afficherDetails() {
+        std::cout << "Marque de la voiture : " << marque << std::endl;
+        std::cout << "Modèle : " << modele << std::endl;
+        std::cout << "Nombre de portes : " << nombrePortes << std::endl;
+    }
+};
+
+int main() {
+    // Exemples d'utilisation
+    Jeu sekiro("Sekiro", 60, 2019, "Souls");
     sekiro.afficherDetails();
-    console ps4("ps4", 399, 2014);
+
+    Console ps4("PS4", 399, 2014);
     ps4.afficherDetails();
 
-
+    Voiture sprinterTrueno("AE86", "Toyota", 3);
+    maVoiture.afficherDetails();
 
     return 0;
 }
